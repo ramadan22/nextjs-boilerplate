@@ -22,15 +22,30 @@
     "react",
     "@typescript-eslint"
   ],
+  "overrides": [
+    {
+      "files": ["*.tsx"],
+      "rules": {
+        "no-undef": "off"
+      }
+    }
+  ],
   "rules": {
     "react/react-in-jsx-scope": ["off"],
     "import/no-unresolved": ["off"],
     "react/jsx-props-no-spreading": ["off"],
-    "import/extensions": ["error", "never", { "css": "ignorePackages" }],
     "react/jsx-indent": ["error", 2],
     "semi": [
       "warn",
       "always"
+    ],
+    "import/extensions": [
+      "error",
+      "never",
+      {
+        "css": "ignorePackages",
+        "svg": "ignorePackages"
+      }
     ],
     "react/jsx-filename-extension": [
       "error",
@@ -45,6 +60,11 @@
       "error",
       {
         "namedComponents": "arrow-function"
+      }
+    ],
+    "react/require-default-props": [
+      "error", {
+        "ignoreFunctionalComponents": true
       }
     ]
   }

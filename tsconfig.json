@@ -21,6 +21,6 @@
       "@/public/*": ["./public/*"]
     }
   },
-  "include": ["src", "src/types/styles.d.ts"],
+  "include": ["src", "src/types/common.d.ts"],
   "exclude": ["./node_modules/**/*"]
 }

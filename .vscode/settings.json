@@ -1,3 +1,10 @@
 {
     "editor.tabSize": 2,
+    "stylelint.enable": true,
+    "stylelint.config": {},
+    "stylelint.snippet": ["css", "less", "postcss", "scss", "vue"],
+    "stylelint.validate": ["css", "less", "postcss", "vue", "scss"],
+    "css.validate": false,
+    "less.validate": false,
+    "scss.validate": false,
 }
