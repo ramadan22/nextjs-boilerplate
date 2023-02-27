@@ -1,0 +1,20 @@
+.basic {
+  @apply relative;
+}
+
+.size {
+  &__small {
+    width: 14px;
+    height: 14px;
+  }
+
+  &__medium {
+    width: 18px;
+    height: 18px;
+  }
+
+  &__large {
+    width: 24px;
+    height: 24px;
+  }
+}
