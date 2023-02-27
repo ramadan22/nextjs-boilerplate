@@ -10,7 +10,7 @@ interface IProps {
 
 const getIcon = (type: IconType): JSX.Element => IconTypes.get(type) as JSX.Element;
 
-const Icon: React.FC<IProps> = ({ size = 'small', type }) => (
+const Icon: React.FC<IProps> = ({ size = 'medium', type }) => (
   <div className={`${styles.basic} ${styles[`size__${size}`]}`}>
     {getIcon(type)}
   </div>
