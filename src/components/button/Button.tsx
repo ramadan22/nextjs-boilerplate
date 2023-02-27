@@ -8,7 +8,7 @@ interface IProps {
 }
 
 const Button: React.FC<IProps> = ({ text, variant = 'primary', size = 'medium' }) => (
-  <button type="button" className={`${styles[variant]} ${styles[size]}`}>
+  <button type="button" className={`${styles[`variant__${variant}`]} ${styles[`size__${size}`]}`}>
     {text}
   </button>
 );

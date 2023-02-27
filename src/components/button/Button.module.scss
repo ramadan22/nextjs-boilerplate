@@ -1,37 +1,41 @@
 /* VARIANTS */
-.primary {
-  @apply bg-primary text-white;
+.variant {
+  &__primary {
+    @apply bg-primary text-white;
 
-  &:hover {
-    @apply opacity-75;
+    &:hover {
+      @apply opacity-75;
+    }
   }
-}
 
-.secondary {
-  @apply bg-secondary text-white;
+  &__secondary {
+    @apply bg-secondary text-white;
 
-  &:hover {
-    @apply opacity-75;
+    &:hover {
+      @apply opacity-75;
+    }
   }
-}
 
-.tertiary {
-  @apply bg-white border border-solid;
+  &__tertiary {
+    @apply bg-white border border-solid;
 
-  &:hover {
-    @apply bg-gray-100;
+    &:hover {
+      @apply bg-gray-100;
+    }
   }
 }
 
 /* SIZE */
-.small {
-  @apply py-1 px-2 text-sm rounded-sm;
-}
+.size {
+  &__small {
+    @apply py-1 px-2 text-sm rounded-sm;
+  }
 
-.medium {
-  @apply py-1.5 px-3 rounded;
-}
+  &__medium {
+    @apply py-1.5 px-3 rounded;
+  }
 
-.large {
-  @apply py-2 px-4 text-lg rounded-lg;
+  &__large {
+    @apply py-2 px-4 text-lg rounded-lg;
+  }
 }

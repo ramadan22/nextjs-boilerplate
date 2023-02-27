@@ -43,7 +43,7 @@
       "error",
       "never",
       {
-        "css": "ignorePackages",
+        "scss": "ignorePackages",
         "svg": "ignorePackages"
       }
     ],
