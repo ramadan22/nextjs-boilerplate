@@ -1,0 +1,49 @@
+@mixin container {
+  @apply px-16;
+}
+
+.wrapper {
+  @apply flex flex-col h-screen;
+
+  .header {
+    @include container;
+    @apply bg-primary flex justify-between items-center py-3;
+  
+    & > div:nth-child(1) {
+      @apply flex items-center gap-x-16;
+  
+      div {
+        @apply w-10 h-10 justify-center text-3xl text-white border border-solid rounded-full;
+      }
+  
+      nav ul {
+        @apply flex items-center gap-x-4;
+  
+        a:link, a:visited {
+          @apply text-white text-lg;
+        }
+  
+        a:hover {
+          @apply opacity-75;
+        }
+
+        a:active {
+          @apply opacity-25;
+        }
+      }
+    }
+  }
+  
+  .content {
+    @apply flex-1 flex h-full gap-x-5;
+  
+    & > div:nth-child(1) {
+      @apply w-[165px] h-full px-6 py-2 bg-gray-100 text-center;
+      box-shadow: 4px 0 5px -3px #ddd;
+    }
+
+    & > div:nth-child(2) {
+      @apply flex-1 flex flex-col px-20 py-10;
+    }
+  }
+}
