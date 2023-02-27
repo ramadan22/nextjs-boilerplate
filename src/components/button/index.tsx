@@ -1,15 +1,5 @@
-import React from 'react';
-import styles from './Button.module.css';
+import Button from './Button';
 
-interface IProps {
-  text: string;
-  // variant: 'primary' | 'secondary';
+export {
+  Button
 }
-
-const Button: React.FC<IProps> = ({ text }) => (
-  <button type="button" className={styles.primary}>
-    {text}
-  </button>
-);
-
-export default Button;
