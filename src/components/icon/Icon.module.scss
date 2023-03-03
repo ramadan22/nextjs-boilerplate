@@ -1,20 +1,20 @@
 .basic {
-  @apply relative flex items-center;
+  @apply relative;
 
   &.size {
-    &__small svg {
-      width: 12px;
-      height: 12px;
-    }
-  
-    &__medium svg {
+    &__small {
       width: 14px;
       height: 14px;
     }
   
-    &__large svg {
+    &__medium {
       width: 18px;
       height: 18px;
+    }
+  
+    &__large {
+      width: 24px;
+      height: 24px;
     }
   }
 }
