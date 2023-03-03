@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import styles from './Icon.module.scss';
 
 import { IconType, IconTypes } from './IconTypes';
@@ -10,7 +10,7 @@ interface IProps {
 
 const getIcon = (type: IconType): JSX.Element => IconTypes.get(type) as JSX.Element;
 
-const Icon: React.FC<IProps> = ({ size = 'small', type }) => (
+const Icon: FC<IProps> = ({ size = 'small', type }) => (
   <div className={`${styles.basic} ${styles[`size__${size}`]}`}>
     {getIcon(type)}
   </div>
