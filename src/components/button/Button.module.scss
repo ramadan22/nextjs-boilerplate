@@ -1,37 +1,41 @@
-/* VARIANTS */
-.primary {
-  @apply bg-primary text-white;
-
-  &:hover {
-    @apply opacity-75;
+.basic {
+  &.variant {
+    &__primary {
+      @apply bg-primary text-white;
+  
+      &:hover, &:disabled {
+        @apply opacity-75;
+      }
+    }
+  
+    &__secondary {
+      @apply bg-secondary text-white;
+  
+      &:hover, &:disabled {
+        @apply opacity-75;
+      }
+    }
+  
+    &__tertiary {
+      @apply bg-white border border-solid;
+  
+      &:hover, &:disabled {
+        @apply bg-gray-100;
+      }
+    }
   }
-}
-
-.secondary {
-  @apply bg-secondary text-white;
-
-  &:hover {
-    @apply opacity-75;
+  
+  &.size {
+    &__small {
+      @apply py-1 px-2 text-sm rounded;
+    }
+  
+    &__medium {
+      @apply py-1.5 px-3 rounded;
+    }
+  
+    &__large {
+      @apply py-2 px-4 text-lg rounded-lg;
+    }
   }
-}
-
-.tertiary {
-  @apply bg-white border border-solid;
-
-  &:hover {
-    @apply bg-gray-100;
-  }
-}
-
-/* SIZE */
-.small {
-  @apply py-1 px-2 text-sm rounded-sm;
-}
-
-.medium {
-  @apply py-1.5 px-3 rounded;
-}
-
-.large {
-  @apply py-2 px-4 text-lg rounded-lg;
 }
