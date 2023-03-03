@@ -1,14 +1,23 @@
-import React from 'react';
+import { FC, ButtonHTMLAttributes } from 'react';
 import styles from './Button.module.scss';
 
-interface IProps {
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
   variant?: 'primary' | 'secondary' | 'tertiary';
   size?: 'small' | 'medium' | 'large';
 }
 
-const Button: React.FC<IProps> = ({ text, variant = 'primary', size = 'medium' }) => (
-  <button type="button" className={`${styles[`variant__${variant}`]} ${styles[`size__${size}`]}`}>
+const Button: FC<Props> = ({
+  variant = 'primary',
+  size = 'medium',
+  text,
+  ...rest
+}) => (
+  <button
+    {...rest}
+    type="button"
+    className={`${styles.basic} ${styles[`variant__${variant}`]} ${styles[`size__${size}`]}`}
+  >
     {text}
   </button>
 );
