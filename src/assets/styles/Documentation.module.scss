@@ -9,7 +9,7 @@
     @include container;
     @apply bg-primary flex justify-between items-center py-3;
   
-    & > div:nth-child(1) {
+    & div:nth-child(1) {
       @apply flex items-center gap-x-16;
   
       div {
@@ -38,12 +38,28 @@
     @apply flex-1 flex h-full gap-x-5;
   
     & > div:nth-child(1) {
-      @apply w-[165px] h-full px-6 py-2 bg-gray-100 text-center;
+      @apply h-full px-8 py-4 bg-gray-100 text-center flex flex-col gap-y-4;
       box-shadow: 4px 0 5px -3px #ddd;
+
+      & ul {
+        @apply flex flex-col gap-y-1.5;
+
+        & li {
+          @apply text-left;
+
+          & ul {
+            @apply flex flex-col gap-y-1 py-1 text-sm;
+
+            & li {
+              @apply px-2;
+            }
+          }
+        }
+      }
     }
 
     & > div:nth-child(2) {
-      @apply flex-1 flex flex-col px-20 py-10;
+      @apply flex-1 px-20 py-10 overflow-auto;
     }
   }
 }
