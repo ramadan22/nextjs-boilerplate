@@ -17,7 +17,7 @@ const ButtonIcon: FC<Props> = ({
   <button
     {...rest}
     type="button"
-    className={`${styles.basic} ${styleButton[`variant__${variant}`]} ${styleButton[`size__${size}`]}`}
+    className={`${styles.basic} ${styleButton.basic} ${styleButton[`variant__${variant}`]} ${styleButton[`size__${size}`]}`}
   >
     {children}
   </button>

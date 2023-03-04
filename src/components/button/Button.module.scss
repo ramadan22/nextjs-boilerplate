@@ -27,15 +27,15 @@
   
   &.size {
     &__small {
-      @apply py-1 px-2 text-sm rounded;
+      @apply text-sm h-6 py-0.5 px-2 rounded;
     }
-  
+
     &__medium {
-      @apply py-1.5 px-3 rounded;
+      @apply h-8 py-1 px-3 rounded;
     }
-  
+
     &__large {
-      @apply py-2 px-4 text-lg rounded-lg;
+      @apply text-lg h-10 py-2 px-4 rounded-lg;
     }
   }
 }

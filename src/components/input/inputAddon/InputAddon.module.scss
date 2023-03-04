@@ -1,0 +1,32 @@
+.basic {
+  @apply flex items-stretch bg-white border border-solid border-[#ccc] rounded-lg overflow-hidden;
+
+  & input {
+    @apply border-none my-auto;
+  }
+
+  & div {
+    &.left {
+      @apply order-first;
+      
+      & > * {
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+      }
+    }
+
+    &.right {
+      @apply order-last;
+      
+      & > * {
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+      }
+    }
+
+    & > * {
+      @apply h-full;
+      height: 100% !important;
+    }
+  }
+}
