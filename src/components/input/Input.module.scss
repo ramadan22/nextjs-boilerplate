@@ -1,5 +1,13 @@
 .basic {
-  @apply text-[#555] bg-white border border-solid border-[#ccc];
+  @apply text-[#555] bg-white border border-solid border-[#ccc] outline-none;
+
+  &:disabled {
+    @apply bg-[#eee];
+  }
+
+  &.fullWidth {
+    @apply w-full;
+  }
 
   &.size {
     &__small {

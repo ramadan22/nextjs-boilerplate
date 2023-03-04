@@ -1,5 +1,5 @@
 .basic {
-  @apply relative;
+  @apply relative flex items-center justify-center;
 
   &.size {
     &__small {
