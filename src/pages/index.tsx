@@ -1,6 +1,8 @@
+import RadioButton from '@/components/radio-button/RadioButton';
+
 const Home = () => (
   <div className="m-10 flex flex-row gap-x-10 gap-y-20">
-    boiler plate
+    <RadioButton text="Laki-laki" value="0" />
   </div>
 );
 

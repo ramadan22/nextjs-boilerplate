@@ -1,0 +1,15 @@
+.basic {
+  @apply flex items-center gap-x-2;
+
+  & > div {
+    @apply p-0.5 rounded-full flex border border-primary border-solid;
+
+    & > span {
+      @apply w-full h-full p-1 rounded-full inline-block;
+
+      &.active {
+        @apply bg-primary;
+      }
+    }
+  }
+}
