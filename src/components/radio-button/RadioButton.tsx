@@ -5,17 +5,29 @@ import styles from './RadioButton.module.scss';
 interface Props {
   text: string;
   value: string | number;
-  // checked: boolean;
+  checked?: boolean;
+  variant?: 'primary' | 'secondary' | 'tertiary';
+  size?: 'small' | 'medium' | 'large';
 }
 
-const RadioButton: FC<Props> = ({ text, value }) => {
+const RadioButton: FC<Props> = ({
+  size = 'medium',
+  variant = 'primary',
+  checked = false,
+  value,
+  text,
+}) => {
   const cx = classNames.bind(styles);
-  const clasess = cx(styles.basic);
+  const classes = cx(
+    styles.basic,
+    styles[`variant__${variant}`],
+    styles[`size__${size}`],
+  );
 
   return (
-    <button type="button" value={value} className={clasess}>
+    <button type="button" value={value} className={classes}>
       <div>
-        <span className={cx({ active: false })} />
+        <span className={cx({ [styles.active]: checked })} />
       </div>
       <span>{text}</span>
     </button>

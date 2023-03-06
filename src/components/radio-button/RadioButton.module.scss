@@ -2,13 +2,79 @@
   @apply flex items-center gap-x-2;
 
   & > div {
-    @apply p-0.5 rounded-full flex border border-primary border-solid;
+    @apply rounded-full flex;
 
     & > span {
-      @apply w-full h-full p-1 rounded-full inline-block;
+      @apply w-full h-full rounded-full inline-block;
+    }
+  }
 
-      &.active {
-        @apply bg-primary;
+  &.size {
+    &__small {
+      @apply text-sm;
+
+      & > div {
+        @apply p-[2px];
+
+        & > span {
+          @apply p-[3px];
+        }
+      }
+    }
+
+    &__medium {
+      @apply text-base;
+
+      & > div {
+        @apply p-[3px];
+
+        & > span {
+          @apply p-[4px];
+        }
+      }
+    }
+
+    &__large {
+      @apply text-lg;
+
+      & > div {
+        @apply p-[4px];
+
+        & > span {
+          @apply p-[5px];
+        }
+      }
+    }
+  }
+
+  &.variant {
+    &__primary {
+      & > div {
+        @apply border border-solid border-primary text-white;
+        
+        & > .active {
+          @apply bg-primary;
+        }
+      }
+    }
+  
+    &__secondary {
+      & > div {
+        @apply border border-solid border-secondary text-white;
+
+        & > .active {
+          @apply bg-secondary;
+        }
+      }
+    }
+  
+    &__tertiary {
+      & > div {
+        @apply border border-solid;
+
+        & > .active {
+          @apply bg-[#e5e7eb];
+        }
       }
     }
   }
