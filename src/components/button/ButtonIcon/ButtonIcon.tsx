@@ -1,14 +1,24 @@
-import React, { ReactNode } from 'react';
-import styles from '@/components/button/button.module.scss';
+import { FC, ReactNode, ButtonHTMLAttributes } from 'react';
+import styles from './ButtonIcon.module.scss';
+import styleButton from '../Button.module.scss';
 
-interface IProps {
-  children: string;
-  variant?: 'primary' | 'secondary' | 'tertiary';
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+  children: ReactNode;
   size?: 'small' | 'medium' | 'large';
+  variant?: 'primary' | 'secondary' | 'tertiary';
 }
 
-const ButtonIcon: React.FC<IProps> = ({ children, variant = 'primary', size = 'medium' }) => (
-  <button type="button" className={`${styles[variant]} ${styles[size]}`}>
+const ButtonIcon: FC<Props> = ({
+  variant = 'primary',
+  size = 'medium',
+  children,
+  ...rest
+}) => (
+  <button
+    {...rest}
+    type="button"
+    className={`${styles.basic} ${styleButton.basic} ${styleButton[`variant__${variant}`]} ${styleButton[`size__${size}`]}`}
+  >
     {children}
   </button>
 );

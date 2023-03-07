@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "text": "Primary",
+    "value": "primary"
+  },
+  {
+    "id": 2,
+    "text": "Secondary",
+    "value": "secondary"
+  },
+  {
+    "id": 3,
+    "text": "Tertiary",
+    "value": "tertiary"
+  }
+]

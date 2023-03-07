@@ -54,7 +54,9 @@ const Template = ({ children }: Props) => (
         </ul>
       </div>
       <div>
-        {children}
+        <div>
+          {children}
+        </div>
       </div>
     </section>
   </div>

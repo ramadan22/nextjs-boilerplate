@@ -35,10 +35,10 @@
   }
   
   .content {
-    @apply flex-1 flex h-full gap-x-5;
+    @apply flex-1 flex gap-x-5;
   
     & > div:nth-child(1) {
-      @apply h-full px-8 py-4 bg-gray-100 text-center flex flex-col gap-y-4;
+      @apply px-8 py-4 bg-gray-100 text-center flex flex-col gap-y-4;
       box-shadow: 4px 0 5px -3px #ddd;
 
       & ul {
@@ -59,7 +59,11 @@
     }
 
     & > div:nth-child(2) {
-      @apply flex-1 px-20 py-10 overflow-auto;
+      @apply flex-1 relative;
+
+      & > div {
+        @apply absolute w-full h-full inset-0 px-20 py-10 overflow-auto;
+      }
     }
   }
 }

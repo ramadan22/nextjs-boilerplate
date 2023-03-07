@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Documentation from '@/features/documentation';
+import Documentation from '@/features/documentation/button';
 
 const DocumentationPage = () => (
   <>

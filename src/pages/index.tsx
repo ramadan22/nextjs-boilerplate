@@ -1,6 +1,6 @@
 const Home = () => (
-  <div className="w-full h-full absolute flex items-center justify-center">
-    <h1 className="text-2xl">Boiler Plate</h1>
+  <div className="m-10 flex flex-row gap-x-10 gap-y-20">
+    Boiler Plate
   </div>
 );
 
