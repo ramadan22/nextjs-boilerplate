@@ -4,8 +4,9 @@ import variants from '@/data/variants.json';
 
 import usePlayground from './hooks/usePlayground';
 
-import Template from '@/layouts/documentation';
 import RadioButton from '@/components/radio-button/RadioButton';
+import WrapZoom from '@/layouts/documentation/WrapZoom';
+import Template from '@/layouts/documentation';
 import { Button } from '@/components/button';
 import { Input } from '@/components/input';
 
@@ -103,12 +104,14 @@ const DocumentationPage = () => {
                 </div>
               </div>
             </form>
-            <div className="w-1/2 flex-1 flex justify-center items-center">
-              <Button
-                size={playground.size}
-                variant={playground.variant}
-                text={playground.text || 'Button'}
-              />
+            <div className="w-1/2 flex-1 flex justify-center items-center relative">
+              <WrapZoom>
+                <Button
+                  size={playground.size}
+                  variant={playground.variant}
+                  text={playground.text || 'Button'}
+                />
+              </WrapZoom>
             </div>
           </div>
         </div>
