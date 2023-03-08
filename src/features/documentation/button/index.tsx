@@ -3,6 +3,7 @@ import { docco } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import variants from '@/data/variants.json';
 
 import usePlayground from './hooks/usePlayground';
+import useCode from './hooks/useCode';
 
 import RadioButton from '@/components/radio-button/RadioButton';
 import WrapZoom from '@/layouts/documentation/WrapZoom';
@@ -11,6 +12,7 @@ import { Button } from '@/components/button';
 import { Input } from '@/components/input';
 
 const DocumentationPage = () => {
+  const { codeString } = useCode();
   const {
     sizes,
     playground,
@@ -18,27 +20,11 @@ const DocumentationPage = () => {
     buttonField,
   } = usePlayground();
 
-  const codeString = `
-  // Button Variant
-  <div className="flex flex-row gap-x-4">
-    <Button text="Primary" variant="secondary" />
-    <Button text="Secondary" variant="secondary" />
-    <Button text="Tertiary" variant="tertiary" />
-  </div>
-
-  // Button Size
-  <div className="flex flex-row gap-x-4">
-    <Button text="Primary" size="small" />
-    <Button text="Secondary" size="medium" />
-    <Button text="Tertiary" size="large" />
-  </div>
-  `;
-
   return (
     <Template>
       <h1 className="text-3xl font-bold my-3">Button Default</h1>
       <hr />
-      <div className="flex flex-col gap-y-5 py-10">
+      <div className="flex flex-col gap-y-14 py-6">
         <div>
           <h1 className="text-xl font-bold my-3">Button Variant</h1>
           <div className="flex flex-row gap-x-4">
@@ -50,9 +36,9 @@ const DocumentationPage = () => {
         <div>
           <h1 className="text-xl font-bold my-3">Button Size</h1>
           <div className="flex flex-row gap-x-4">
-            <Button text="Primary" size="small" />
-            <Button text="Secondary" size="medium" />
-            <Button text="Tertiary" size="large" />
+            <Button text="Small" size="small" />
+            <Button text="Medium" size="medium" />
+            <Button text="Large" size="large" />
           </div>
         </div>
         <div>
@@ -60,6 +46,35 @@ const DocumentationPage = () => {
           <SyntaxHighlighter language="vbscript-html" style={docco}>
             {codeString}
           </SyntaxHighlighter>
+          <table className="w-full mt-6 table-fixed">
+            <thead>
+              <tr className="text-left border">
+                <th className="p-2 text-sm">Name</th>
+                <th className="p-2 text-sm">Decription</th>
+                <th className="p-2 text-sm">Default</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="text-xs border">
+                <td className="py-3 px-2">Variant</td>
+                <td className="py-3 px-2 flex flex-row items-center flex-wrap gap-x-2">
+                  <span className="rounded bg-gray-100 px-2 py-0.5">&quot;Primary&quot;</span>
+                  <span className="rounded bg-gray-100 px-2 py-0.5">&quot;Secondary&quot;</span>
+                  <span className="rounded bg-gray-100 px-2 py-0.5">&quot;Tertiary&quot;</span>
+                </td>
+                <td className="py-3 px-2"><span className="rounded bg-gray-100 px-2 py-0.5">Primary</span></td>
+              </tr>
+              <tr className="text-xs border">
+                <td className="py-3 px-2">Size</td>
+                <td className="py-3 px-2 flex flex-row items-center flex-wrap gap-x-2">
+                  <span className="rounded bg-gray-100 px-2 py-0.5">&quot;Small&quot;</span>
+                  <span className="rounded bg-gray-100 px-2 py-0.5">&quot;Medium&quot;</span>
+                  <span className="rounded bg-gray-100 px-2 py-0.5">&quot;Large&quot;</span>
+                </td>
+                <td className="py-3 px-2"><span className="rounded bg-gray-100 px-2 py-0.5">Medium</span></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         <div>
           <h1 className="text-xl font-bold my-3">Playground</h1>
