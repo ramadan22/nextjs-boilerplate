@@ -6,10 +6,11 @@ import usePlayground from './hooks/usePlayground';
 import useCode from './hooks/useCode';
 
 import RadioButton from '@/components/radio-button/RadioButton';
-import WrapZoom from '@/layouts/documentation/WrapZoom';
-import Template from '@/layouts/documentation';
-import { Button } from '@/components/button';
+import WrapZoom from '@/documentation/layouts/WrapZoom';
+import Template from '@/documentation/layouts';
+import { Button, ButtonIcon } from '@/components/button';
 import { Input } from '@/components/input';
+import Icon from '@/components/icon/Icon';
 
 const DocumentationPage = () => {
   const { codeString } = useCode();
@@ -22,23 +23,57 @@ const DocumentationPage = () => {
 
   return (
     <Template>
-      <h1 className="text-3xl font-bold my-3">Button Default</h1>
+      <h1 className="text-3xl font-bold my-3">Button Icon</h1>
       <hr />
       <div className="flex flex-col gap-y-14 py-6">
         <div>
-          <h1 className="text-xl font-bold my-3">Button Variant</h1>
+          <h1 className="text-xl font-bold my-3">Variant</h1>
           <div className="flex flex-row gap-x-4">
-            <Button text="Primary" variant="primary" />
-            <Button text="Secondary" variant="secondary" />
-            <Button text="Tertiary" variant="tertiary" />
+            <ButtonIcon variant="primary">
+              <Icon type="ArrowDown" />
+              Primary
+            </ButtonIcon>
+            <ButtonIcon variant="secondary">
+              <Icon type="ArrowDown" />
+              Secondary
+            </ButtonIcon>
+            <ButtonIcon variant="tertiary">
+              <Icon type="ArrowDown" />
+              Tertiary
+            </ButtonIcon>
           </div>
         </div>
         <div>
-          <h1 className="text-xl font-bold my-3">Button Size</h1>
+          <h1 className="text-xl font-bold my-3">Size</h1>
           <div className="flex flex-row gap-x-4">
-            <Button text="Small" size="small" />
-            <Button text="Medium" size="medium" />
-            <Button text="Large" size="large" />
+            <ButtonIcon size="small">
+              <Icon type="ArrowDown" />
+              Small
+            </ButtonIcon>
+            <ButtonIcon size="medium">
+              <Icon type="ArrowDown" />
+              Medium
+            </ButtonIcon>
+            <ButtonIcon size="large">
+              <Icon type="ArrowDown" />
+              Large
+            </ButtonIcon>
+          </div>
+        </div>
+        <div>
+          <h1 className="text-xl font-bold my-3">Children</h1>
+          <div className="flex flex-row gap-x-4">
+            <ButtonIcon>
+              <Icon type="ArrowDown" />
+              Text With Icon Left
+            </ButtonIcon>
+            <ButtonIcon>
+              Text With Icon Right
+              <Icon type="ArrowDown" />
+            </ButtonIcon>
+            <ButtonIcon>
+              <Icon type="ArrowDown" />
+            </ButtonIcon>
           </div>
         </div>
         <div>
@@ -72,6 +107,13 @@ const DocumentationPage = () => {
                   <span className="rounded bg-gray-100 px-2 py-0.5">&quot;Large&quot;</span>
                 </td>
                 <td className="py-3 px-2"><span className="rounded bg-gray-100 px-2 py-0.5">Medium</span></td>
+              </tr>
+              <tr className="text-xs border">
+                <td className="py-3 px-2">Children</td>
+                <td className="py-3 px-2 flex flex-row items-center flex-wrap gap-x-2">
+                  <span className="rounded bg-gray-100 px-2 py-0.5">&quot;ReactNode&quot;</span>
+                </td>
+                <td className="py-3 px-2"><span className="rounded bg-gray-100 px-2 py-0.5">-</span></td>
               </tr>
             </tbody>
           </table>
@@ -121,11 +163,10 @@ const DocumentationPage = () => {
             </form>
             <div className="w-1/2 flex-1 flex justify-center items-center relative">
               <WrapZoom>
-                <Button
-                  size={playground.size}
-                  variant={playground.variant}
-                  text={playground.text || 'Button'}
-                />
+                <ButtonIcon size={playground.size} variant={playground.variant}>
+                  <Icon type="ArrowDown" />
+                  {playground.text || 'Button'}
+                </ButtonIcon>
               </WrapZoom>
             </div>
           </div>

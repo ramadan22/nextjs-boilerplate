@@ -38,20 +38,21 @@
     @apply flex-1 flex gap-x-5;
   
     & > div:nth-child(1) {
-      @apply px-8 py-4 bg-gray-100 text-center flex flex-col gap-y-4;
+      @apply p-4 bg-gray-100 text-center flex flex-col gap-y-4;
       box-shadow: 4px 0 5px -3px #ddd;
+      font-family: 'Titillium Web', sans-serif;
 
       & ul {
-        @apply flex flex-col gap-y-1.5;
+        @apply flex flex-col gap-y-1;
 
         & li {
-          @apply text-left;
+          @apply text-left text-sm;
 
           & ul {
-            @apply flex flex-col gap-y-1 py-1 text-sm;
+            @apply hidden flex-col gap-y-0.5 py-0.5 text-xs;
 
             & li {
-              @apply px-2;
+              @apply px-1;
             }
           }
         }
@@ -63,6 +64,10 @@
 
       & > div {
         @apply absolute w-full h-full inset-0 px-20 py-10 overflow-auto;
+
+        & code {
+          @apply text-sm
+        }
       }
     }
   }
