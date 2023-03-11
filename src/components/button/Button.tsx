@@ -1,10 +1,12 @@
 import { FC, ButtonHTMLAttributes } from 'react';
+import { ISize, IVariant } from '@/types/globals';
+
 import styles from './Button.module.scss';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
-  variant?: 'primary' | 'secondary' | 'tertiary';
-  size?: 'small' | 'medium' | 'large';
+  variant?: IVariant;
+  size?: ISize;
 }
 
 const Button: FC<Props> = ({

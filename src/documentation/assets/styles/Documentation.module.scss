@@ -1,0 +1,74 @@
+@mixin container {
+  @apply px-16;
+}
+
+.wrapper {
+  @apply flex flex-col h-screen;
+
+  .header {
+    @include container;
+    @apply bg-primary flex justify-between items-center py-3;
+  
+    & div:nth-child(1) {
+      @apply flex items-center gap-x-16;
+  
+      div {
+        @apply w-10 h-10 justify-center text-3xl text-white border border-solid rounded-full;
+      }
+  
+      nav ul {
+        @apply flex items-center gap-x-4;
+  
+        a:link, a:visited {
+          @apply text-white text-lg;
+        }
+  
+        a:hover {
+          @apply opacity-75;
+        }
+
+        a:active {
+          @apply opacity-25;
+        }
+      }
+    }
+  }
+  
+  .content {
+    @apply flex-1 flex gap-x-5;
+  
+    & > div:nth-child(1) {
+      @apply p-4 bg-gray-100 text-center flex flex-col gap-y-4;
+      box-shadow: 4px 0 5px -3px #ddd;
+      font-family: 'Titillium Web', sans-serif;
+
+      & ul {
+        @apply flex flex-col gap-y-1;
+
+        & li {
+          @apply text-left text-sm;
+
+          & ul {
+            @apply hidden flex-col gap-y-0.5 py-0.5 text-xs;
+
+            & li {
+              @apply px-1;
+            }
+          }
+        }
+      }
+    }
+
+    & > div:nth-child(2) {
+      @apply flex-1 relative;
+
+      & > div {
+        @apply absolute w-full h-full inset-0 px-20 py-10 overflow-auto;
+
+        & code {
+          @apply text-sm
+        }
+      }
+    }
+  }
+}

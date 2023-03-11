@@ -1,21 +1,26 @@
-import { FC } from 'react';
+import { FC, ButtonHTMLAttributes, MouseEventHandler } from 'react';
 import classNames from 'classnames/bind';
+
+import { ISize, IVariant } from '@/types/globals';
 import styles from './RadioButton.module.scss';
 
-interface Props {
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
   value: string | number;
   checked?: boolean;
-  variant?: 'primary' | 'secondary' | 'tertiary';
-  size?: 'small' | 'medium' | 'large';
+  variant?: IVariant;
+  size?: ISize;
+  onClick?: MouseEventHandler;
 }
 
 const RadioButton: FC<Props> = ({
-  size = 'medium',
-  variant = 'primary',
-  checked = false,
-  value,
   text,
+  value,
+  onClick,
+  size = 'medium',
+  checked = false,
+  variant = 'primary',
+  ...rest
 }) => {
   const cx = classNames.bind(styles);
   const classes = cx(
@@ -25,7 +30,13 @@ const RadioButton: FC<Props> = ({
   );
 
   return (
-    <button type="button" value={value} className={classes}>
+    <button
+      {...rest}
+      type="button"
+      value={value}
+      onClick={onClick}
+      className={classes}
+    >
       <div>
         <span className={cx({ [styles.active]: checked })} />
       </div>
