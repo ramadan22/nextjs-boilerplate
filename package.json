@@ -19,6 +19,11 @@
       "path": "@commitlint/cz-commitlint"
     }
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "sh pre-commit.sh"
+    }
+  },
   "devDependencies": {
     "@commitlint/cli": "^19.2.2",
     "@commitlint/config-conventional": "^19.2.2",
