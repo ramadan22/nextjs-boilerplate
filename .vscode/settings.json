@@ -7,13 +7,13 @@
     "source.fixAll.eslint": "explicit",
     "source.organizeImports": "explicit",
   },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
   "tailwindCSS.experimental.classRegex": [
     ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
     ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
   ],
-  "editor.quickSuggestions": {
-    "strings": true
-  },
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   }
