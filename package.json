@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "next lint && tsc --noEmit --incremental false",
+    "typecheck": "tsc --noEmit --incremental false",
     "commit": "cz"
   },
   "dependencies": {
@@ -17,11 +18,6 @@
   "config": {
     "commitizen": {
       "path": "@commitlint/cz-commitlint"
-    }
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "sh pre-commit.sh"
     }
   },
   "devDependencies": {
