@@ -7,8 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint && tsc",
+    "typecheck": "tsc --noEmit --incremental false",
     "commit": "cz",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "dependencies": {
     "next": "14.2.1",
@@ -18,6 +19,11 @@
   "config": {
     "commitizen": {
       "path": "@commitlint/cz-commitlint"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "if [[ $(grep -c 'git commit -m' $GIT_PARAMS) -ne 0 ]]; then echo 'Error: Please use Commitizen for committing.' && exit 1; fi"
     }
   },
   "devDependencies": {
