@@ -1,5 +1,7 @@
+import Label from '@/components/label';
+
 export const HomePage = () => (
-  <div>Boiler plate</div>
+  <Label>test</Label>
 );
 
 export default HomePage;
