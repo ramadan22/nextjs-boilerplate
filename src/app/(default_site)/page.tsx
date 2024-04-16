@@ -1,7 +1,5 @@
-import Input from '@/components/input';
-
 export const HomePage = () => (
-  <Input iconType="Search" />
+  <div>Boiler plate</div>
 );
 
 export default HomePage;
