@@ -10,6 +10,10 @@
   "editor.quickSuggestions": {
     "strings": true
   },
+  "tailwindCSS.experimental.classRegex": [
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+  ],
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   }
