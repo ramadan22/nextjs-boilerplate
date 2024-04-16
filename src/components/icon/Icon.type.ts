@@ -1,5 +1,7 @@
 export type IconValueType =
   | 'Search'
+  | 'Close'
+  | 'ChevronDown'
   | 'Check';
 
 export type IconType = {
