@@ -1,5 +1,6 @@
 export type IconValueType =
-  | 'Search';
+  | 'Search'
+  | 'Check';
 
 export type IconType = {
   className?: string;
