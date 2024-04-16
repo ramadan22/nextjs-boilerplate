@@ -1,7 +1,7 @@
-import Label from '@/components/label';
+import Input from '@/components/input';
 
 export const HomePage = () => (
-  <Label>test</Label>
+  <Input iconType="Search" />
 );
 
 export default HomePage;
