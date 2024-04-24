@@ -1,5 +1,7 @@
+import LoginFeature from '@/features/login';
+
 export const HomePage = () => (
-  <div>Boiler plate</div>
+  <LoginFeature />
 );
 
 export default HomePage;
