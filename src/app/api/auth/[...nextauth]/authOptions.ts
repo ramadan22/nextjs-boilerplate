@@ -4,7 +4,6 @@
 import { NextAuthOptions, TokenData, UserData } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
-import { ErrorConvertToMessage } from '@/helpers/handleResponseError';
 import AuthenticationService from '@/services/authentication';
 import UserService from '@/services/users';
 
@@ -52,7 +51,8 @@ export const authOptions: NextAuthOptions = {
             }
           };
         } catch (error) {
-          throw new Error(ErrorConvertToMessage(error));
+          const message = (error as { message?: string })?.message;
+          throw new Error(message);
         }
       },
     }),

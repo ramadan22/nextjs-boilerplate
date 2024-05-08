@@ -9,6 +9,7 @@ import { cn } from '@/lib/classnames';
 export interface SearchInputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
   classIcon?: string;
+  classWrapper?: string;
   classInput?: string;
   iconType?: IconValueType;
   iconDirection?: 'left' | 'right';
@@ -30,7 +31,7 @@ const Input = React.forwardRef<HTMLInputElement, SearchInputProps>(
         type="text"
         ref={ref}
         className={cn(
-          'flex-1 w-full text-sm font-semibold placeholder:text-gray-light bg-transparent placeholder:font-normal focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50',
+          'flex-1 w-full text-sm font-semibold placeholder:text-gray-light placeholder:font-normal focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50',
           classInput,
         )}
         {...props}

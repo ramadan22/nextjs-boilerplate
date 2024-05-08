@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
-import '@/assets/styes/globals.scss';
+import '@/assets/styes/globals.css';
+import NextAuthProvider from '@/lib/providers/nextAuthProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -17,7 +18,9 @@ export const RootLayout = ({
 }>) => (
   <html lang="en">
     <body className={inter.className}>
-      {children}
+      <NextAuthProvider>
+        {children}
+      </NextAuthProvider>
     </body>
   </html>
 );

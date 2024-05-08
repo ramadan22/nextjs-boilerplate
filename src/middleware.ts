@@ -8,7 +8,7 @@ export default withAuth(
 
     const isAuth = !!userAuth;
 
-    const isAuthPage = req.nextUrl.pathname === '/login';
+    const isAuthPage = req.nextUrl.pathname === '/';
 
     if (!isAuth && !isAuthPage) {
       let from = req.nextUrl.pathname;
@@ -18,12 +18,12 @@ export default withAuth(
       }
 
       return NextResponse.redirect(
-        new URL(`/login?from=${encodeURIComponent(from)}`, req.url),
+        new URL(`/?from=${encodeURIComponent(from)}`, req.url),
       );
     }
 
     if (isAuthPage && isAuth) {
-      return NextResponse.redirect(new URL('/dashboard', req.url));
+      return NextResponse.redirect(new URL('/logged', req.url));
     }
 
     return null;
@@ -42,7 +42,7 @@ export default withAuth(
 
 export const config = {
   matcher: [
-    '/dashboard/:path*',
-    '/login',
+    '/logged',
+    '/',
   ],
 };

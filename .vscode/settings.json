@@ -10,7 +10,6 @@
   "editor.quickSuggestions": {
     "strings": true
   },
-  "scss.lint.unknownAtRules": "ignore",
   "tailwindCSS.experimental.classRegex": [
     ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
     ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
