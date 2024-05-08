@@ -1,0 +1,11 @@
+.navbar {
+  @apply bg-white h-16 border-b flex justify-between items-center px-6 text-[10px];
+
+  .inputSearch {
+    @apply bg-[#f6f6fb] basis-1/2 shadow-none border h-8 text-sm;
+  }
+
+  .iconSearch {
+    @apply text-[#9ca3af];
+  }
+}

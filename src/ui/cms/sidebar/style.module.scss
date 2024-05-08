@@ -1,0 +1,35 @@
+.sidebar {
+  @apply bg-[#F1F2F7] h-full;
+
+  & > div:nth-child(1) {
+    @apply px-6 h-16 flex items-center border-b gap-x-2 mb-8;
+
+    & > label {
+      @apply uppercase text-[#5b67ba];
+    }
+  }
+
+  & > div:nth-child(2) {
+    @apply flex flex-col gap-y-8;
+
+    & > div {
+      @apply px-6;
+
+      & > label {
+        @apply text-xs text-[#7c8a94] uppercase;
+      }
+
+      & > ul {
+        @apply mt-4 flex flex-col gap-y-4;
+
+        & > li > a {
+          @apply text-sm text-[#787f89] flex items-center gap-x-1.5;
+        }
+      }
+    }
+  }
+}
+
+.badge {
+  @apply w-6 h-6 rounded-full bg-[#5b67ba] flex justify-center items-center text-white text-sm;
+}

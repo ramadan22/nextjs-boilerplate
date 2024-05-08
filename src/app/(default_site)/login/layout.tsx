@@ -6,8 +6,8 @@ import '@/assets/styes/globals.scss';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Nextjs Boilerplate',
-  description: 'Nextjs Boilerplate',
+  title: 'Login',
+  description: 'Login',
 };
 
 export const RootLayout = ({

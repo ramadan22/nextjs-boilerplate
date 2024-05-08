@@ -3,7 +3,7 @@ import { ResponseApiTypes } from '@/types/responseApi';
 import { LoginResponseTypes, PayloadsTypes } from './authenticationTypes';
 
 const AuthenticationService = () => {
-  const signIn = async (payload: PayloadsTypes) => new Promise<
+  const signIn = (payload: PayloadsTypes) => new Promise<
     ResponseApiTypes<LoginResponseTypes>
   >((resolve, reject) => {
     AxiosInstance.post('/authentication/signIn', payload)

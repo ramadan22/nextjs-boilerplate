@@ -3,9 +3,11 @@ import { HandleLoginParamsTypes } from '../types/postDataTypes';
 
 export const handleLogin = async (params: HandleLoginParamsTypes) => {
   params.event.preventDefault();
-  await signIn('credentials', {
+  const result = await signIn('credentials', {
     email: params.email,
     password: params.password,
-    redirect: true,
+    redirect: false,
   });
+
+  return result;
 };
